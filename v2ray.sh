@@ -75,8 +75,8 @@ iptables -t filter -I INPUT -p tcp --dport $port3 -j ACCEPT
 iptables -t filter -I INPUT -p tcp --dport $port4 -j ACCEPT
 iptables -t filter -I INPUT -p tcp --dport $port5 -j ACCEPT
 iptables -t filter -I INPUT -p tcp -m state --state RELATED,ESTABLISHED -j ACCEPT
-iptables -t filter -I OUTPUT -p tcp -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -t filter -A INPUT -p tcp -j DROP
+iptables -t filter -I OUTPUT -p tcp -m state --state RELATED,ESTABLISHED -j ACCEPT
 
 # Save Firewall Config
 rm /etc/iptables/rules.v4
