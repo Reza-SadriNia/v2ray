@@ -5,7 +5,7 @@
 
 
 ```bash
-wget https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh
+wget https://raw.githubusercontent.com/Reza-SadriNia/v2ray/main/v2ray.sh
 ```
 
 ```bash
