@@ -94,7 +94,7 @@ echo "==================================
 #
 =================================="
 
-wget https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh
+wget https://raw.githubusercontent.com/Reza-SadriNia/v2ray/main/install.sh
 bash install.sh
 
 echo "==================================
