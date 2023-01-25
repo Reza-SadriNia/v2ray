@@ -33,19 +33,15 @@ echo "==================================
 #
 =================================="
 
-# UNcomment The Line SSH PORT
-sed -i '/^#.*Port /s/^#//' /etc/ssh/sshd_config
 
-# Change SSH PORT
+# Change SSH PORT and Set Permit Root Login
 read -p "Enter The SSH PORT Number: " SSH_PORT
-sed -i 's/22/${SSH_PORT}/g' /etc/ssh/sshd_config
+sed -i "/^#.*Port /s/^#Port 22/Port $SSH_PORT/g" /etc/ssh/sshd_config
+sed -i "/^#.*PermitRootLogin /s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
-# Set Permit Root Login
-sed -i '/^#.*PermitRootLogin /s/^#//' /etc/ssh/sshd_config
-sed -i 's/^PermitRootLogin .*$/PermitRootLogin yes/' /etc/ssh/sshd_config
-
-# Restart SSH Service
-systemctl restart sshd.service
+# Restart and enable SSH Service
+sudo systemctl enable sshd.service
+sudo systemctl restart sshd.service
 
 echo "==================================
 #
